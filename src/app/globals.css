@@ -2,6 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+  .inputs {
+    @apply text-base;
+    @apply border-slate-200;
+    @apply placeholder-slate-400;
+    @apply  h-12 ;
+    @apply w-full;
+    @apply p-2;
+    @apply rounded-md;
+    @apply border;
+
+    
+  }
+  
+  .container {
+    @apply max-w-7xl;
+    @apply px-5;
+
+  }
+  
+  .btn {
+    @apply uppercase;    
+    @apply text-xs;    
+    @apply  p-2  ;
+    @apply  text-white;
+    @apply font-bold ;
+    @apply w-full;
+    @apply rounded-xl ;
+    @apply cursor-pointer;
+    @apply hover:bg-backgroudnDark2;
+    @apply disabled:opacity-30;
+  } 
+  
+  
+  button:focus-visible, a:focus-visible,  input:focus-visible{
+    @apply outline;
+    @apply outline-offset-0;
+    @apply outline-4;
+    @apply outline-backgroudnDark2;
+  } 
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,12 +57,38 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+body {  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  @apply bg-slate-100
+}
+
+table{
+  @apply border-spacing-0;
+  @apply border-separate;
+  @apply border-slate-300;
+  @apply border-solid;
+  @apply border-[1px];
+  @apply rounded-lg;
+}
+
+td, th{
+  @apply border-spacing-0;
+  @apply border-separate;
+  @apply border-slate-300;
+  @apply border-solid;
+  @apply border-b-[1px];
+
+}
+
+tfoot th{
+  @apply border-0
 }
