@@ -24,7 +24,7 @@ export default function InputText ({ className, errorMessage, type = 'text', ...
         <div className='absolute '>
           {isPassword
             ? (
-              <div  style={{ userSelect: 'none', marginLeft: 5, marginTop: 10, marginRight: 0 }}>
+              <div style={{ userSelect: 'none', marginLeft: 5, marginTop: 10, marginRight: 0 }}>
 
                 {showPassword
                   ? <Eye onClick={handleShowPassword} size={24} color={colors.slate[500]} />

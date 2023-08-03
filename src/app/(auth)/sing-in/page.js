@@ -36,12 +36,12 @@ export default function SingIn () {
         <div className=' flex justify-center max-w-6x1 w-full  md:rounded-3xl md:items-center md:mb-20 h-[500px] md:drop-shadow-3xl'>
           <div className='hidden relative h-full md:rounded-2xl  bg-backgroudnDark  md:flex  md:flex-1 ' />
           <div className='flex bg-white  flex-1 mt-40  px- h-full justify-center  md:rounded-r-2xl md:px-10 md:py-20 md:mt-0'>
-            <form className='flex flex-1 flex-col' onSubmit={formik.handleSubmit}>
+            <form className='flex flex-1 flex-col ' onSubmit={formik.handleSubmit}>
               <div>
                 <p className='text text-4xl font-bold text-backgroudnDark'>Log in</p>
                 <span className='text-base'>Sign in to start your sessione</span>
               </div>
-              <div className='flex flex-col mt-6 gap-2'>
+              <div className=' relative flex flex-col mt-6 gap-2 '>
 
                 <InputText
                   name='email'
