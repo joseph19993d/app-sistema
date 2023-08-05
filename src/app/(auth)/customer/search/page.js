@@ -3,7 +3,6 @@ import { useCallback } from 'react'
 import Link from 'next/link'
 import InputText from '@/components/inputText/customer/register'
 import { Form, useFormik } from 'formik'
-import Table from '@/components/Tables/Table'
 import { customerRValidation } from '@/utils/validations'
 const data = [
   { id: 1, name: 'John Doe', age: 30, email: 'john@example.com' },
@@ -88,7 +87,7 @@ export default function Search () {
               </label>
               <div id='table'>
 
-                <Table data={data} />
+               
               </div>
 
             </div>
