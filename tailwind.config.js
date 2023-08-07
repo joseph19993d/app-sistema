@@ -13,9 +13,10 @@ module.exports = {
     colors: {
       ...colors,
 
-      backgroudnLight: '#E78777',
-      backgroudnDark: '#1E2664',
-      backgroudnDark2: '#1e26649a'
+      PrimaryDark: '#3498DB  ',
+      PrimaryLight: '#F5F5F5',
+      SecondaryDark: '#333333 ',
+      SecondaryLight: '#3498DB  '
     },
     extend: {
       dropShadow: {
