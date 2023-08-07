@@ -16,8 +16,7 @@
   }
   
   .container {
-    @apply max-w-7xl;
-    @apply px-5;
+    @apply px-4;
     
   }
   
@@ -30,7 +29,7 @@
     @apply w-full;
     @apply rounded-xl ;
     @apply cursor-pointer;
-    @apply hover:bg-backgroudnDark2;
+    @apply hover:bg-[#275BB0];
     @apply disabled:opacity-30;
   } 
   
@@ -39,7 +38,7 @@
     @apply outline;
     @apply outline-offset-0;
     @apply outline-4;
-    @apply outline-backgroudnDark2;
+    @apply outline-PrimaryDark;
   } 
 
 
