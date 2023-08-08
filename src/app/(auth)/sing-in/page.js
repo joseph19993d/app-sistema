@@ -7,7 +7,6 @@ import { useFormik } from 'formik'
 import { loginValidation } from '@/utils/validations'
 
 const initialValues = {
-
   email: '',
   password: ''
 }

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
   .inputs {
     @apply text-base;
     @apply border-slate-200;
@@ -14,7 +16,8 @@
 
     
   }
-  
+
+
   .container {
     @apply max-w-7xl;
     @apply px-5;
