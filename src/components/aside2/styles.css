@@ -1,0 +1,15 @@
+.sideHidden {
+    display: none;
+}
+.closed{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    writing-mode: vertical-lr;
+    max-width:20px;
+    height:64px;
+}
+.shown{
+    background-color: black;
+    color: white;
+    height:64px;
+}

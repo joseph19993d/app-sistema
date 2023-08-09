@@ -4,11 +4,11 @@ import { FaCog, FaCashRegister, FaLockOpen, FaBoxOpen, FaUserCircle, FaFileInvoi
 
 import colors from "tailwindcss/colors"
 
-
 export default async function Dashboard() {
   return (
-    <main className="flex flex-1 flex-col p-6 md:p-20">
+    <main className="flex flex-1 flex-col p-6 md:p-20 max-h-full overflow-y-auto ">
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        
         <button className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between transition duration-300 ease-in-out transform hover:scale-105">
           <div className="relative">
             <FaCashRegister size={80} color={colors.slate[600]} />

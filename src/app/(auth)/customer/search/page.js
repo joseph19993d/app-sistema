@@ -47,10 +47,6 @@ export default function Search () {
   console.log('is valid', formik.isValid)
   console.log('searchIsDisable', searchIsDisable)
 
-
-
-  
-
   return (
     <main className='flex justify-center min-h-screen bg-white md:bg-gradient-to-r md:from-red-500 md:to-blue-900  md:items-center '>
       <div className='container flex justify-center '>
@@ -64,7 +60,7 @@ export default function Search () {
 
             <form className='relative flex flex-1 flex-col ' onSubmit={formik.handleSubmit}>
               <div>
-                <p className='text text-4xl font-bold text-backgroudnDark'>Buscar cliente</p>
+                <p className='text text-4xl font-bold  text-blue-800'>Buscar cliente</p>
 
               </div>
               <div className='flex flex-col mt-6 gap-2   '>

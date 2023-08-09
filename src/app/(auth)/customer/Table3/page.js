@@ -11,6 +11,7 @@ const claves = Object.keys(datos[0]);
 let table3Body = 0;
 
 return(
+
 <div>
     <div className="overflow-x-auto inset-0 ">
         <table className="min-w-full divide-y divide-gray-200 ">

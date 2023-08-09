@@ -56,6 +56,11 @@ table td{
     padding-top: 24px;
     padding-bottom: 24px;
 }
+.xx{
+    background-color: blue;
+    color: blue;
+    display: none;
+}
 
 @media (max-width: 499px) {
 
