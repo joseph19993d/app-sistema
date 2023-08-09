@@ -1,6 +1,6 @@
 "use client"
 
-import { Aside } from "@/components/aside2";
+import { Aside } from "@/components/aside";
 import { Nav } from "@/components/nav";
 import Modal from 'react-modal';
 
