@@ -24,25 +24,23 @@ const fakeUserData = [
 
 export default async function UserManagement() {
   return (
-    <main className="flex flex-1 flex-col p-20">
+    <main className="flex flex-1 flex-col p-5 md:p-20">
       <div className="bg-white rounded-lg shadow-md p-4 mb-5">
-      <div className="flex justify-center items-center mb-4">
-          <h2 className="text-3xl font-semibold">User Management</h2>
-          <div className="flex items-center space-x-2 ml-auto">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="border rounded-lg py-1 px-2 focus:outline-none focus:border-PrimaryDark"
-            />
-            <button className="bg-PrimaryDark hover:bg-SecondaryDark text-white rounded-lg py-1 px-3 flex items-center focus:outline-none">
-              <FaSearch size={20} color={colors.white} />
-            </button>
-            <button className="bg-PrimaryDark hover:bg-SecondaryDark text-white rounded-lg py-1 px-3 flex items-center focus:outline-none">
-              <Plus size={20} color={colors.white} weight="bold" />
-              <span>Add New</span>
-            </button>
-          </div>
-          </div>
+        <h2 className="text-3xl font-semibold text-center md:text-left mb-4">User Management</h2>
+        <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-2">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="border rounded-lg py-1 px-2 focus:outline-none focus:border-PrimaryDark"
+          />
+          <button className="bg-PrimaryDark hover:bg-SecondaryDark text-white rounded-lg py-1 px-3 flex items-center focus:outline-none">
+            <FaSearch size={20} color={colors.white} />
+          </button>
+          <button className="bg-PrimaryDark hover:bg-SecondaryDark text-white rounded-lg py-1 px-3 flex items-center focus:outline-none">
+            <Plus size={20} color={colors.white} weight="bold" />
+            <span>Add New</span>
+          </button>
+        </div>
         <div className="w-full overflow-x-auto">
           <div className="max-w-[750px]">
             <UsersTable
@@ -52,8 +50,6 @@ export default async function UserManagement() {
           </div>
         </div>
         {/* Pagination Component */}
-        
       </div>
     </main>
-  );
-}
+  );}

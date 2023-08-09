@@ -18,16 +18,17 @@ export default async function Layout({ children }) {
     //console.log('pathName',pathName )
 
     return (
-        <main className="flex h-screen   overflow-hidden bg-slate-100 relative">
-            <Aside className="absoulte top-0 left-0 z-0"/>
-            <div className="flex flex-1 flex-col">
-            <Nav/>
-            <div className="flex flex-1 flex-col relative z-0">
-                {children}
+        <main className="flex h-screen overflow-hidden bg-slate-100 relative">
+  <div className="absolute top-0 left-0 z-10 h-screen md:relative">
+    <Aside />
+  </div>
+  <div className="flex flex-1 flex-col">
+    <Nav />
+    <div className="flex flex-1 flex-col relative z-0">
+      {children}
+    </div>
+  </div>
+</main>
 
-            </div>
-            </div>
-            
-        </main>
     )
 }
