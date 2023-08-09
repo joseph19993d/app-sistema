@@ -17,6 +17,13 @@ export const singupValidation = loginValidation.shape({
     .required('You are trying to enter an empty nick')
 })
 
+export const customerSearch = object({
+  ids: number()
+    .min(9999,'minimo 5 caracteres')
+    .required('Campo requerido'),
+
+})
+
 export const customerRValidation = object({
   id: number()
 

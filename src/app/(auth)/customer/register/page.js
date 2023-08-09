@@ -43,7 +43,7 @@ export default function Register () {
         <div className=' flex justify-center max-w-6x1 w-full  md:rounded-3xl md:items-center md:mb-20 h-[800px] md:drop-shadow-3xl mt-3'>
           {/* img phase -> */}
 
-          <div className=' box-decoration-clone hover:box-decoration-slice relative h-full md:rounded-s-lg  bg-backgroudnDark  md:flex  md:flex-1 ' />
+          <div className=' box-decoration-clone hover:box-decoration-slice relative h-full md:rounded-s-lg  bg-black  md:flex  md:flex-1 ' />
 
           <div className='flex bg-white  flex-1 mt-10  h-full justify-center  md:rounded-r-2xl md:px-10 md:py-10 md:mt-0'>
 
@@ -54,7 +54,7 @@ export default function Register () {
               </div>
               <div className='relative flex flex-col mt-6 gap-2  '>
 
-                <span className='text-1xl font-bold text-blue 600e'>Ingresar datos del nuevo cliente</span>
+                <span className='text-1xl font-bold text-blue 600e '>Ingresar datos del nuevo cliente</span>
 
                 <InputText
                   name='id'
