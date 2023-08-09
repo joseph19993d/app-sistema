@@ -15,7 +15,7 @@ export const MenuLink = (
     const _props = {
         ...props,
         className: classNames(
-            'bg-white p-4 rounded-lg shadow-md flex items-center justify-between transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl',
+            'bg-white p-4 rounded-lg shadow-md flex items-center justify-between transition duration-300 ease-in-out transform  border-[1px] border-slate-200 hover:scale-105 hover:shadow-2xl',
            )
     }
     if (as) {
