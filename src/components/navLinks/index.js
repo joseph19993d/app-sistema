@@ -8,7 +8,6 @@ export const NavLinks = (
     href = '',
     active = false,
     disabled = false,
-    icon,
     children,
     color=transparent,
     ...props }) => {
@@ -25,7 +24,6 @@ export const NavLinks = (
         return createElement(as, _props, icon, children)
     }
     return (<Link href={href} {..._props}>
-        {icon}
         {children}
     </Link>)
 

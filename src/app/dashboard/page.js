@@ -6,17 +6,10 @@ import colors from "tailwindcss/colors"
 
 export default async function Dashboard() {
   return (
-<<<<<<< HEAD
-    <main className="flex flex-1 flex-col p-6 md:p-20 max-h-full overflow-y-auto ">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        
-        <button className="bg-white p-4 rounded-lg shadow-md flex items-center justify-between transition duration-300 ease-in-out transform hover:scale-105">
-=======
     
     <main className="flex flex-1 flex-col p-6 md:p-14 overflow-y-auto">
       <div className="grid grid-cols-1 gap-3 min-[320px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
         <MenuLink >
->>>>>>> 2eff9ee7d9cd424f64d4b062264b29b36eb75853
           <div className="relative">
             <FaCashRegister size={80} color={colors.slate[600]} />
             <span className="absolute -bottom-2 -right-2 bg-white p-1 rounded-full">
