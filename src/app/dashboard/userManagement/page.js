@@ -22,16 +22,9 @@ const fakeUserData = [
   // ... otros datos falsos de usuarios ...
 ];
 
-<<<<<<< HEAD
-export default  function UserManagement() {
-  
-return (
-    <main className="flex flex-1 flex-col p-20">
-=======
 export default async function UserManagement() {
   return (
     <main className="flex flex-1 flex-col p-5 md:p-20">
->>>>>>> 2eff9ee7d9cd424f64d4b062264b29b36eb75853
       <div className="bg-white rounded-lg shadow-md p-4 mb-5">
         <h2 className="text-3xl font-semibold text-center md:text-left mb-4">User Management</h2>
         <div className="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-2">

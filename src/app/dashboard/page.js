@@ -7,9 +7,9 @@ import colors from "tailwindcss/colors"
 export default async function Dashboard() {
   return (
     
-    <main className="flex flex-1 flex-col p-6 md:p-14 overflow-y-auto">
-      <div className="grid grid-cols-1 gap-3 min-[320px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-        <MenuLink >
+    <main className="flex max-h-screen p-6 md:p-14 overflow-y-auto">
+    <div className="grid grid-cols-1 gap-3 min-[320px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+       <MenuLink >
           <div className="relative">
             <FaCashRegister size={80} color={colors.slate[600]} />
             <span className="absolute -bottom-2 -right-2 bg-white p-1 rounded-full">

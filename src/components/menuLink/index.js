@@ -8,7 +8,6 @@ export const MenuLink = (
     href = '',
     active = false,
     disabled = false,
-    icon,
     children,
     color=transparent,
     ...props }) => {
@@ -22,7 +21,7 @@ export const MenuLink = (
         return createElement(as, _props, icon, children)
     }
     return (<Link href={href} {..._props}>
-        {icon}
+        
         {children}
     </Link>)
 

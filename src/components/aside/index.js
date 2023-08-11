@@ -67,7 +67,7 @@ export const Aside = () => {
                         <div className="flex items-center h-8 gap-2 px-5 py-8 border-gray-500 border-b-[1px]">
                             <NavLinks href="/dashboard">
                                 <div className="grid content-center justify-center rounded-full w-9 h-9 bg-white">
-                                    <Image className="" src="/logo.png" alt="Logo img" width={25} height={25} />
+                                    {/**<Image className="" src="/logo.png" alt="Logo img" width={25} height={25} />*/}
                                 </div>
                                 <div className={`block text-ellipsis whitespace-nowrap   ${showAsideMenu ? "block" : "block md:hidden"}`}>
                                     <p className="text-[1.25rem] font-medium text-PrimaryLight ">AppSistema</p>
@@ -91,11 +91,12 @@ export const Aside = () => {
 
                         {/* Botones */}
                         <div className="h-full overflow-y-auto px-5 mb-20 mt-3 ">
-                            <NavLinks className="snap-start items-center text-gray-300 hover:text-white">
+                        <NavLinks className="snap-start items-center text-gray-300 hover:text-white">
                                 <span className="mr-2">
                                     <ChartBarHorizontal size={26} color={colors.white} />
                                 </span> {showAsideMenu ? "Statistics" : ""}
                             </NavLinks>
+
 
 
 
@@ -106,7 +107,7 @@ export const Aside = () => {
                             <div className="absolute bottom-0">
                                 <NavLinks className="flex items-center text-gray-300 hover:text-white">
                                     <span className="mr-2">
-                                        <Gear ontal size={26} color={colors.white} />
+                                        <Gear  size={26} color={colors.white} />
                                     </span> {showAsideMenu ? "Configuraciones" : ""}
                                 </NavLinks>
                                 <NavLinks className="items- text-gray-300 hover:text-white">
