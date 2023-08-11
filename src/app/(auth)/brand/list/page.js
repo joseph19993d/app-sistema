@@ -3,14 +3,13 @@ import { useCallback } from 'react'
 import Link from 'next/link'
 import InputText from '@/components/inputText/customer/search'
 import { Form, useFormik } from 'formik'
-import { customerSearch } from '@/utils/validations'
-import Table3 from '../../../../components/Table3/page'
-import { Table } from '@phosphor-icons/react'
+import { brandSearchValidation  } from '@/utils/validations'
+import Table3 from '@/components/Table3/page'
 import React, { useState } from 'react';
 
 //rounded
 const initialValues = {
-  ids: '',
+  name: ''
 }
 
 export default function Search () {
@@ -32,7 +31,7 @@ export default function Search () {
 
   const formik = useFormik({
     initialValues,
-    validationSchema: customerSearch,
+    validationSchema: brandSearchValidation ,
     onSubmit
   })
 
@@ -60,22 +59,22 @@ export default function Search () {
 
             <form className='relative flex flex-1 flex-col ' onSubmit={formik.handleSubmit}>
               <div>
-                <p className='text text-4xl font-bold  text-blue-800'>Buscar cliente</p>
+                <p className='text text-4xl font-bold mt-6 text-blue-800'>Marcas</p>
 
               </div>
-              <div className='flex flex-col mt-6 gap-2   '>
+              <div className='flex flex-col mt-5 gap-2   '>
 
-                <span className=' text-1xl font-bold '>Buscar Persona por ID</span>
+                <span className=' text-1xl font-bold '> Busqueda </span>
                 <div className=' box-border border-cyan-300 p-2 border-2 p-1 bg-blue-100 rounded-lg'>
 
                   <InputText
-                    name='ids'
-                    type='number'
-                    placeholder='ID de Persona'
-                    value={formik.values.ids}
+                    name='name'
+                    type='text'
+                    placeholder='Nombre'
+                    value={formik.values.nombre}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    errorMessage={formik.touched.ids && formik.errors.ids ? formik.errors.ids : null}
+                    errorMessage={formik.touched.nombre && formik.errors.nombre ? formik.errors.nombre : null}
                   />
                   <input className='text-center
                   btn 
@@ -86,22 +85,28 @@ export default function Search () {
                 </div>
               </div>
             </form>
-            <div className='box-border border-cyan-300 p-2 border-2 p-1 bg-blue-100 rounded-lg h-[500px]  my-4'>
+
+            <label className=' mt-5 font-bold  mb-0'>
+                Marcas:
+            </label>
+
+            <div className='box-border  mt-1 border-cyan-300  border-2 p-1 bg-blue-100 rounded-lg h-[500px]  my-4'>
               {/* Fake Data: -> */}
-              <label className=' font-bold '>
-                Datos de persona buscada por id:
-              </label>
+             
               <div id='table  inset-0'>
                <Table3 datos={datos} />
               </div>
 
             </div>
+
             <div className='m-4 mt-1  text-center '>
-              <Link className='
+              <Link 
+              className='
               btn 
               bg-gradient-to-r from-blue-500 to-blue-900 hover:from-pink-500 hover:to-yellow-500
-              ' href='/customer/register'
-              >Regitrar un nuevo cliente</Link>
+              '
+              href=''
+              >Regitrar una nueva marca</Link>
             </div>
 
           </div>

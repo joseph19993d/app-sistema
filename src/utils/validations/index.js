@@ -68,3 +68,113 @@ export const userCreateValidation = object({
     .required('Este campo es requerido')
 
 })
+
+export const locationCreateValidation = object({
+  name: string()
+    .required('Campo requerido'),
+
+  direcction: string()
+    .required('Campo requerido'),
+  
+  description: string()
+    .required('Campo requerido'),
+
+})
+
+export const locationSearchValidation = object({
+
+  nombre: string()
+    .min(5,'minimo 5 caracteres')
+
+})
+
+export const userSearchValidation = object({
+
+  nombre: string()
+    .min(5,'minimo 5 caracteres')
+
+})
+
+
+
+export const supplierRegisterValidation = object({
+
+
+  name: string()
+
+    .required('Campo requerido'),
+
+  email: string()
+
+    .min(5, 'Minimo de 5 letras')
+    .required('Campo requerido '),
+
+  phone: number()
+
+    .min(99999, 'minimo de numeros 6')
+    .max(99999999999999, 'Numero demasiado largo'),
+
+  address: string()
+    
+    .min(5, 'Minimo de 5 letras')
+    .required('Campo requerido'),
+
+})
+
+
+export const supplierSearchValidation = object({
+
+  name: string()
+    .min(1,'minimo 1 caracteres')
+    .required('Campo requerido'),
+
+})
+
+
+export const categoryCreateValidation = object({
+
+  name: string()
+    .required('Este campo es requerido'),
+  description: string()
+    .min(8, 'Minimo de 8 characteres')
+    .required('Este campo es requerido')
+
+})
+
+export const categorySearchValidation = object({
+
+  name: string()
+    .min(1,'minimo 1 caracteres')
+    .required('Campo requerido'),
+
+})
+
+export const brandCreateValidation = object({
+
+  name: string()
+    .required('Este campo es requerido'),
+
+
+})
+
+export const brandSearchValidation = object({
+
+  name: string()
+    .min(1,'minimo 1 caracteres')
+    .required('Campo requerido'),
+
+})
+
+
+export const productRegisterValidation = object({
+
+  
+  name: string()
+    
+    .required('Campo requerido'),
+
+  description: string()
+
+    .required('Campo requerido '),
+
+})
