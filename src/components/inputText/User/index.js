@@ -2,11 +2,14 @@ import classNames from 'classnames'
 import { useState, useCallback } from 'react'
 import { Eye, EyeSlash, WarningCircle } from '@phosphor-icons/react'
 import colors from 'tailwindcss/colors'
+
 export default function InputText ({ className, errorMessage, type = 'text', ...props }) {
+
   const [showPassword, setShowPassword] = useState(false)
   const isPassword = type === 'password'
   const currentType = isPassword ? (showPassword ? 'text' : 'password') : type
   const handleShowPassword = useCallback(() => setShowPassword(state => !state), [])
+  
   return (
 
     <div className='min-h-[60px]'>

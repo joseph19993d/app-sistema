@@ -73,10 +73,10 @@ export const locationCreateValidation = object({
   name: string()
     .required('Campo requerido'),
 
-  direcction: string()
+  address: string()
     .required('Campo requerido'),
   
-  description: string()
+  rif: string()
     .required('Campo requerido'),
 
 })

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { NavLinks } from "@/components/navLinks";
-import { ChartBarHorizontal, Gear, List, Money, SignOut } from "@phosphor-icons/react";
+import { ChartBarHorizontal, Gear, List, Money, SignOut, HandCoins, ArchiveBox, ClipboardText, FileSearch, UserGear  } from "@phosphor-icons/react";
 import Image from "next/image";
 import colors from "tailwindcss/colors";
 
 
 export const Aside = () => {
+
     const [mouseOverMenu, setMouseOverMenu] = useState(false);
     const [blockAsideMenu, setBlockAsideMenu] = useState(false);
 
@@ -48,9 +49,15 @@ export const Aside = () => {
         };
     }, [handleShowAsideMenu]);
 
+ 
+        const handleUpdate = () => {
+          // Actualizar asideVariable utilizando la función proporcionada
+          updateAsideVariable("Nuevo valor desde Aside");
+        };
 
     return (
         <div>
+
             <div className="flex h-full z-50">
                 <div className={`flex flex-col bg-SecondaryDark h-screen text-slate-300 transition-all z-50 
                             ${showAsideMenu ? "w-52" : "w-0  md:block"} 
@@ -67,7 +74,7 @@ export const Aside = () => {
                         <div className="flex items-center h-8 gap-2 px-5 py-8 border-gray-500 border-b-[1px]">
                             <NavLinks href="/dashboard">
                                 <div className="grid content-center justify-center rounded-full w-9 h-9 bg-white">
-                                    {/**<Image className="" src="/logo.png" alt="Logo img" width={25} height={25} />*/}
+                                    {<Image className="" src="/logo.png" alt="Logo img" width={40} height={40} />}
                                 </div>
                                 <div className={`block text-ellipsis whitespace-nowrap   ${showAsideMenu ? "block" : "block md:hidden"}`}>
                                     <p className="text-[1.25rem] font-medium text-PrimaryLight ">AppSistema</p>
@@ -90,12 +97,41 @@ export const Aside = () => {
 
 
                         {/* Botones */}
+                        
                         <div className="h-full overflow-y-auto px-5 mb-20 mt-3 ">
+
                         <NavLinks className="snap-start items-center text-gray-300 hover:text-white">
                                 <span className="mr-2">
-                                    <ChartBarHorizontal size={26} color={colors.white} />
-                                </span> {showAsideMenu ? "Statistics" : ""}
-                            </NavLinks>
+                                    <UserGear size={26} color={colors.white} />
+                                </span> {showAsideMenu ? "Sesion" : ""}
+                        </NavLinks>
+
+                        <NavLinks href="/dashboard/modules/agregar" className="snap-start items-center text-gray-300 hover:text-white">
+                                <span className="mr-2">
+                                    <ArchiveBox size={26} color={colors.white} />
+                                </span> {showAsideMenu ? "Agregar" : ""}
+                        </NavLinks>
+
+                        <NavLinks href="/dashboard/modules/ventas" className="snap-start items-center text-gray-300 hover:text-white">
+                                <span className="mr-2">
+                                    <HandCoins size={26} color={colors.white} />
+                                </span> {showAsideMenu ? "Ventas" : ""}
+                        </NavLinks>
+                       
+                        
+                        <NavLinks className="snap-start items-center text-gray-300 hover:text-white">
+                                <span className="mr-2">
+                                    <FileSearch  size={26} color={colors.white} />
+                                </span> {showAsideMenu ? "Buscar" : ""}
+                        </NavLinks>
+
+                        <NavLinks className="snap-start items-center text-gray-300 hover:text-white">
+                                <span className="mr-2">
+                                    <ClipboardText size={26} color={colors.white} />
+                                </span> {showAsideMenu ? "Reportes" : ""}
+                        </NavLinks>
+
+                        
 
 
 
@@ -105,11 +141,12 @@ export const Aside = () => {
 
                         <div className="mb-4  px-5  static ">
                             <div className="absolute bottom-0">
-                                <NavLinks className="flex items-center text-gray-300 hover:text-white">
+                                <NavLinks href="/components/brand/create"  className="flex items-center text-gray-300 hover:text-white">
                                     <span className="mr-2">
                                         <Gear  size={26} color={colors.white} />
                                     </span> {showAsideMenu ? "Configuraciones" : ""}
                                 </NavLinks>
+                                
                                 <NavLinks className="items- text-gray-300 hover:text-white">
                                     <span className="mr-2">
                                         <SignOut size={26} color={colors.white} />

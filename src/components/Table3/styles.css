@@ -1,7 +1,4 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
         /* table {
             font-size: 18px;
@@ -55,11 +52,6 @@ table td{
     padding-right: 24px;
     padding-top: 24px;
     padding-bottom: 24px;
-}
-.xx{
-    background-color: blue;
-    color: blue;
-    display: none;
 }
 
 @media (max-width: 499px) {

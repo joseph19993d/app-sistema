@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback } from 'react'
-import InputText from '@/components/inputText/customer/register'
+import InputText from '@/components/inputText/customer'
 import { useFormik } from 'formik'
 import { brandCreateValidation } from '@/utils/validations'
 import Image from 'next/image'

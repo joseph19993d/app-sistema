@@ -1,24 +1,35 @@
 'use client'
 import { useCallback } from 'react'
 import Link from 'next/link'
-import InputText from '@/components/inputText/customer/search'
+import InputText, { InputSearch } from '@/components/inputText/customer/search'
 import { Form, useFormik } from 'formik'
-import { brandSearchValidation  } from '@/utils/validations'
+import { supplierSearchValidation } from '@/utils/validations'
 import Table3 from '@/components/Table3/page'
+import { Table } from '@phosphor-icons/react'
 import React, { useState } from 'react';
 
 //rounded
 const initialValues = {
-  name: ''
+  name: '',
 }
 
 export default function Search () {
 
   const [datos, setDatos] = useState([
-    { nombre: 'John Doe', edad: 30, correo: 'john@example.com' },
-    { nombre: 'Jane Smith', edad: 25, correo: 'jane@example.com' },
-    { nombre: 'Robert Johnson', edad: 40, correo: 'robert@example.com' },
-    { nombre: 'Robert Johnson', edad: 40 , correo: 'robert@example.com' },
+    { 
+      id:'1',
+      detalle:'detalle 1',
+      idinventary:'inventary 1',
+      idCurrency:' currency 1',
+      price:' price 1'
+    },
+    { 
+      id:'2',
+      detalle:'detalle 2',
+      idinventary:'inventary 2',
+      idCurrency:' currency 2',
+      price:' price 2'
+    },
    
   ]);
 
@@ -31,7 +42,7 @@ export default function Search () {
 
   const formik = useFormik({
     initialValues,
-    validationSchema: brandSearchValidation ,
+    validationSchema: supplierSearchValidation,
     onSubmit
   })
 
@@ -59,54 +70,48 @@ export default function Search () {
 
             <form className='relative flex flex-1 flex-col ' onSubmit={formik.handleSubmit}>
               <div>
-                <p className='text text-4xl font-bold mt-6 text-blue-800'>Marcas</p>
+                <p className='text text-4xl font-bold  text-blue-800'>Inventario</p>
 
               </div>
-              <div className='flex flex-col mt-5 gap-2   '>
+              <div className='flex flex-col mt-6 gap-2   '>
 
-                <span className=' text-1xl font-bold '> Busqueda </span>
+                <span className=' text-1xl font-bold '>Buscar stock por nombre</span>
                 <div className=' box-border border-cyan-300 p-2 border-2 p-1 bg-blue-100 rounded-lg'>
 
-                  <InputText
+                  <InputSearch
                     name='name'
                     type='text'
-                    placeholder='Nombre'
-                    value={formik.values.nombre}
+                    placeholder='Nombre de Persona'
+                    value={formik.values.name}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    errorMessage={formik.touched.nombre && formik.errors.nombre ? formik.errors.nombre : null}
+                    errorMessage={formik.touched.name && formik.errors.name ? formik.errors.name : null}
                   />
-                  <input className='text-center
+                  {/* <input className='text-center
                   btn 
                   border-blue-900 border-1
                   bg-gradient-to-r from-blue-500 to-blue-900 hover:from-pink-500 hover:to-yellow-500
                   mt-2  
-                  max-w-[35%] ' value='Buscar' type='submit'  disabled={!searchIsDisable} />
+                  max-w-[35%] ' value='Buscar' type='submit'  disabled={!searchIsDisable} /> */}
                 </div>
               </div>
             </form>
-
-            <label className=' mt-5 font-bold  mb-0'>
-                Marcas:
-            </label>
-
-            <div className='box-border  mt-1 border-cyan-300  border-2 p-1 bg-blue-100 rounded-lg h-[500px]  my-4'>
+            <div className='box-border border-cyan-300 p-2 border-2 p-1 bg-blue-100 rounded-lg h-[500px]  my-4'>
               {/* Fake Data: -> */}
-             
+              <label className=' font-bold '>
+                Encontrados:
+              </label>
               <div id='table  inset-0'>
                <Table3 datos={datos} />
               </div>
 
             </div>
-
             <div className='m-4 mt-1  text-center '>
-              <Link 
-              className='
+              <Link className='
               btn 
               bg-gradient-to-r from-blue-500 to-blue-900 hover:from-pink-500 hover:to-yellow-500
-              '
-              href=''
-              >Regitrar una nueva marca</Link>
+              ' href='/customer/register'
+              >Regitrar nuevo stock</Link>
             </div>
 
           </div>

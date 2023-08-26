@@ -3,18 +3,18 @@
 import { useCallback } from 'react'
 import InputText from '@/components/inputText/customer'
 import { useFormik } from 'formik'
-import { supplierRegisterValidation } from '@/utils/validations'
+import { customerRValidation } from '@/utils/validations'
 import Image from 'next/image'
 import { useState } from 'react'
-import Selection from '@/components/select/page'
-
 
 const initialValues = {
-  idPersona: '',
-  name: '',
-  address: '',
+  id: '',
+  fname: '',
+  lname: '',
+  email: '',
   phone: '',
-  email: ''
+  sex: '',
+  direcction: ''
 }
 
 export default function Register () {
@@ -27,14 +27,11 @@ export default function Register () {
 
   const formik = useFormik({
     initialValues,
-    validationSchema: supplierRegisterValidation,
+    validationSchema: customerRValidation,
     onSubmit
   })
 
-  const [persona, setPersona] = useState([
-    { id: 1, nombre: 'Andres', descripcion: 'A@example.com' },
-    { id: 2, nombre: 'Joseph', descripcion: 'O@example.com' },
-  ])
+  
 
   const isDisable = formik.isValid || formik.isSubmitting && formik.dirty
 
@@ -52,7 +49,7 @@ export default function Register () {
     <main className='flex justify-center min-h-screen bg-white md:bg-gradient-to-r md:from-red-500 md:to-blue-900  md:items-center '>
       <div className='container flex justify-center '>
 
-        <div className=' flex justify-center max-w-6x1 w-full  md:rounded md:items-center md:mb-20 max-h-[700px] max-w-[800px] md:drop-shadow-3xl md:mt-4'>
+        <div className=' flex justify-center max-w-6x1 w-full  md:rounded md:items-center md:mb-20 h-[700px] max-w-[800px] md:drop-shadow-3xl md:mt-4'>
           {/* img phase -> */}
 
           {/* <div className=' box-decoration-clone hover:box-decoration-slice relative h-full md:rounded-s-lg  bg-backgroudnDark  md:flex  md:flex-1 ' /> */}
@@ -62,33 +59,43 @@ export default function Register () {
             <form className='relative flex flex-1 flex-col ' onSubmit={formik.handleSubmit}>
 
               <div>
-                <p className='text text-4xl font-bold text-blue-800'>Registro de proveedor</p>
+                <p className='text text-4xl font-bold text-blue-800'>Registro de cliente</p>
               </div>
 
               <div className='relative flex flex-col mt-6 gap-2  '>
 
-                <span className='text-1xl font-bold text-blue 600e '>Ingresar datos del nuevo proveedor</span>
+                <span className='text-1xl font-bold text-blue 600e '>Ingresar datos del nuevo cliente</span>
 
                 <div className='box-border border-cyan-30 border-2 p-1 bg-blue-100 rounded-lg pt-2'>
-                  <Selection 
-                    label='Contacto de empresa ' 
-                    name='idPersona' 
-                    type='select' 
-                    opcion="nombre" 
-                    opcionName="id" 
-                    datos={persona} 
-                    />
-
                   <InputText
-                    name='name'
-                    type='text'
-                    placeholder='Nombre'
-                    value={formik.values.name}
+                    name='id'
+                    type='number'
+                    placeholder=' ..... '
+                    value={formik.values.id}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    errorMessage={formik.touched.name && formik.errors.name ? formik.errors.name : null}
+                    errorMessage={formik.touched.id && formik.errors.id ? formik.errors.id : null}
                   />
 
+                  <InputText
+                    name='fname'
+                    type='text'
+                    placeholder='Primer Nombre'
+                    value={formik.values.fname}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    errorMessage={formik.touched.fname && formik.errors.fname ? formik.errors.fname : null}
+                  />
+
+                  <InputText
+                    name='lname'
+                    type='text'
+                    placeholder='Apellido'
+                    value={formik.values.lname}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    errorMessage={formik.touched.lname && formik.errors.lname ? formik.errors.lname : null}
+                  />
                   <InputText
                     name='email'
                     type='email'
@@ -108,16 +115,33 @@ export default function Register () {
                     onBlur={formik.handleBlur}
                     errorMessage={formik.touched.phone && formik.errors.phone ? formik.errors.phone : null}
                   />
-                  
+                  <div className='inputs !pr-[30px] bg-white text-neutral-600 text-1xl mb-3 rounded-lg min-h-[60px]  '>
+                    <label className='text-1xl '> Sexo </label>
+                        
+                      <select
+                        className='rounded-lg '
+                        name='sex'
+                        type='select'
+                        value={selectedOption}
+                        onChange={handleSelectChange }
+                      >
+                        <option value='null' className='text-red'> Seleccionar </option>
+                        <option value='m'> Masculino</option>
+                        <option value='f'> Femenino </option>
+                        <option value='Other'> Otro </option>
+
+                    </select>
+                    
+                  </div>
 
                   <InputText
-                    name='address'
+                    name='direcction'
                     type='text'
                     placeholder='Direccion'
-                    value={formik.values.address}
+                    value={formik.values.direcction}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    errorMessage={formik.touched.address && formik.errors.address ? formik.errors.address : null}
+                    errorMessage={formik.touched.direcction && formik.errors.direcction ? formik.errors.direcction : null}
                   />
 
                 </div>

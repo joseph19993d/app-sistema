@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback } from 'react'
-import InputText from '@/components/inputText/customer/register'
+import InputText from '@/components/inputText/customer'
 import { useFormik } from 'formik'
 import { productRegisterValidation } from '@/utils/validations'
 import Image from 'next/image'
@@ -107,6 +107,30 @@ export default function Register () {
                     onBlur={formik.handleBlur}
                     errorMessage={formik.touched.description && formik.errors.description ? formik.errors.description : null}
                   />
+
+                  {/* Editar : */ }
+                  
+                  <InputText
+                    name='description'
+                    type='text' 
+                    placeholder='Stock Maximo '
+                    value={formik.values.description}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    errorMessage={formik.touched.description && formik.errors.description ? formik.errors.description : null}
+                  />
+                  
+                  <InputText
+                    name='description'
+                    type='text'
+                    placeholder='Stock Minimo '
+                    value={formik.values.description}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    errorMessage={formik.touched.description && formik.errors.description ? formik.errors.description : null}
+                  />
+                  
+
 
                 </div>
               </div>
